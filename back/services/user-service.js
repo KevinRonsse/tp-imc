@@ -7,17 +7,14 @@ export class UserService extends BaseService {
         
     }
 
-    
-
-    addCustomer(firstName, lastName, phone) {
-        const customer = new Customer(++this.count, firstName, lastName, phone)
-        this.data.push(customer)
+    addUser() {
+        const user = new User()
+        this.data.push(user)
         this.writeToJson()
     }
 
-    getCustomerById(id) {
-        
-        return this.data.find(c =>c.id == id)
+    getUserByName(name) {
+        return this.data.find(u =>u.name == name)
     }
 
 }

@@ -1,8 +1,7 @@
 export class Imc{
-    constructor(date, dateWeight, dateImc, dateStatus){
+    constructor(idUser, date, dateWeight){
+        this.idUser = idUser
         this.date = date
         this.dateWeight = dateWeight
-        this.dateImc = dateImc
-        this.dateStatus = dateStatus   
     }
 }
