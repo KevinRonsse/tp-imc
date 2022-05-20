@@ -12,7 +12,7 @@ const Inscription = () => {
   const onFinishFailed = (errorInfo ) => {
     console.log('Failed:', errorInfo);
   };
-  const dateFormat = 'DD-MM-YYYY';
+  const dateFormatList = ['DD/MM/YYYY', 'DD/MM/YY'];
 
   
 
@@ -29,9 +29,9 @@ const Inscription = () => {
     >
 
       <Row justify="left">
-        <Col span={4}></Col>
-        <h1>Inscription</h1>
-        <Col span={4}></Col>
+        <Col span={6}></Col>
+        <h1>Registration</h1>
+        <Col span={6}></Col>
       </Row>
 
 
@@ -60,11 +60,11 @@ const Inscription = () => {
       </Form.Item>
 
       <Form.Item
-        label="date of birthday"
+        label="Date of Birthday"
         name="Date of birthday"
         rules={[{ required: true, message: 'Please input your date of birthday!' }]}
       >
-        <DatePicker defaultValue={moment('', dateFormat)} />
+        <DatePicker defaultValue={moment('01/01/2015', dateFormatList[0])} format={dateFormatList} />
       </Form.Item>
 
       <Form.Item
@@ -82,17 +82,20 @@ const Inscription = () => {
       >
         <Input />
       </Form.Item>
-      <Form.Item wrapperCol={{ offset: 4, span: 8 }}>
+      <Form.Item wrapperCol={{ offset: 9, span: 8 }}>
 
        
       
-        <Space align="center">
-        <Button type="primary" htmlType="submit">
-          Validation 
-        </Button> 
-        <p>Si vous possedez un compte.</p>
-
-        </Space>
+      <div className="space-align-container">
+    <div className="space-align-block">
+      <Space align="center">
+        
+        <Button type="primary">Validation</Button>
+        <span className="mock-block">If you already have an account</span>
+       <span className="mock-block"><nav>Connection</nav></span>
+      </Space>
+    </div>
+    </div>
       </Form.Item>
 
 

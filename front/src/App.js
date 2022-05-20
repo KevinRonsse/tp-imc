@@ -1,7 +1,8 @@
 import './App.css';
-import Connexion from './Components/Connexion/Connexion.js'
 import Inscription from './Components/Inscription/Inscription.js';
 import { Home } from './Containers/home';
+import Connexion from './Components/Connexion/Connexion'
+import ImcModal from './Components/ImcModal/ImcModal'
 
 
 

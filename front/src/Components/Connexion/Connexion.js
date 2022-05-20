@@ -1,4 +1,4 @@
-import { Form, Input, Button } from 'antd'
+import { Form, Input, Button,Space, Col,Row } from 'antd'
 
 const Connexion = () => {
   const onFinish = (values) => {
@@ -13,21 +13,21 @@ const Connexion = () => {
     <Form
       name="basic"
       labelCol={{ span: 8 }}
-      wrapperCol={{ span: 16 }}
+      wrapperCol={{ span: 8 }}
       initialValues={{ remember: true }}
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
       autoComplete="off"
-    >
-      <Form.Item
-        label="FirtsName"
-        name="FirstName"
-        rules={[{ required: true, message: 'Please input your FirstName!' }]}
       >
-        <Input />
-      </Form.Item>
+
+      <Row justify="left">
+      <Col span={6}></Col>
+      <h1>Connection</h1>
+      <Col span={6}></Col>
+    </Row>
+
       <Form.Item
-        label="LasttsName"
+        label="LastName"
         name="LastName"
         rules={[{ required: true, message: 'Please input your LastName!' }]}
       >
@@ -36,7 +36,7 @@ const Connexion = () => {
 
       <Form.Item
         label="Password"
-        name="password"
+        name="Password"
         rules={[{ required: true, message: 'Please input your password!' }]}
       >
         <Input.Password />
@@ -44,12 +44,17 @@ const Connexion = () => {
 
 
 
-      <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-        <Button type="primary" htmlType="submit">
-          Submit
-        </Button> 
-        <p>Si vous possedez un compte ?</p>
-       
+      <Form.Item wrapperCol={{ offset: 9, span: 8 }}>
+      <div className="space-align-container">
+    <div className="space-align-block">
+      <Space align="center">
+        
+        <Button type="primary">Validation</Button>
+        <span className="mock-block">If you don't already have an account.</span>
+       <span className="mock-block"><nav>Registration</nav></span>
+      </Space>
+    </div>
+    </div>
 
        
       </Form.Item>
