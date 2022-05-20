@@ -1,5 +1,5 @@
 import { Imc } from "../classes/imc.js"
-import { BaseService } from "./baseService.js"
+import { BaseService } from "./base-service.js"
 
 export class ImcService extends BaseService {
     constructor() {
@@ -7,12 +7,17 @@ export class ImcService extends BaseService {
     }
 
     addImc(idUser, date, dateWeight) {
+        let message = 'imc data error'
         const newImc = new Imc(idUser, date, dateWeight)
-        this.data.push(newImc)
-        this.writeToJson()
+        if (newImc != undefined){
+            this.data.push(newImc)
+            this.writeToJson()
+            message = 'imc data successfully entered'
+        }
+        return { message: message}
     }
 
     getImcByUserId(idUser) {
-        return this.data.find(i => i.idUser == idUser)
+        return this.data.filter(d => d.idUser == idUser)
     }
 }

@@ -1,3 +1,1 @@
-[
-    
-]
+[{"id":1,"password":"1234","firstName":"myFirstName1","lastName":"myLastName1","dob":"12-12-2000","height":160,"weight":57},{"id":2,"password":"5678","firstName":"myFirstName2","lastName":"myLastName1","dob":"12-12-2000","height":160,"weight":57},{"id":3,"password":"1234","firstName":"myFirstName1","lastName":"myLastName2","dob":"12-12-2000","height":160,"weight":57},{"id":4,"password":"1234","firstName":"Kevin","lastName":"Dupont","dob":"12-12-2000","height":160,"weight":57},{"id":5,"password":"4321","firstName":"Cedric","lastName":"Dupont","dob":"12-12-2000","height":160,"weight":57}]
