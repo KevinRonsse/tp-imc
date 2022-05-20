@@ -1,4 +1,4 @@
-import { Form, input, Button, Checkbox } from 'antd'
+import { Form, Input, Button, Checkbox } from 'antd'
 
 export const Identifcation = () => {
     const Validation = (value) => {

@@ -1,14 +1,32 @@
-
 import './App.css';
-import Connection from './Components/Connection/connection';
+import Connexion from './Components/Connexion/Connexion.js'
+import Inscription from './Components/Inscription/Inscription.js';
+
+
 
 function App() {
   return (
-    <div className="App">
-      <Connection/>
+    <>
+
+      <Inscription />
      
-    </div>
-  );
+    
+
+
+
+
+    </>
+
+
+
+
+
+
+
+
+
+
+  )
 }
 
 export default App;
