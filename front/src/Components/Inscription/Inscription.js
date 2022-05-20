@@ -60,11 +60,11 @@ const Inscription = () => {
       </Form.Item>
 
       <Form.Item
-        label="date of birthday"
+        label="Date of Birthday"
         name="Date of birthday"
         rules={[{ required: true, message: 'Please input your date of birthday!' }]}
       >
-        <DatePicker defaultValue={moment('', dateFormat)} />
+        <DatePicker initialValues={moment('15/06/2015', dateFormat)} />
       </Form.Item>
 
       <Form.Item
@@ -86,13 +86,15 @@ const Inscription = () => {
 
        
       
-        <Space align="center">
-        <Button type="primary" htmlType="submit">
-          Validation 
-        </Button> 
-        <p>Si vous possedez un compte.</p>
-
-        </Space>
+      <div className="space-align-container">
+    <div className="space-align-block">
+      <Space align="center">
+        
+        <Button type="primary">Validation</Button>
+        <span className="mock-block">Si vous possedez deja un compte.</span>
+      </Space>
+    </div>
+    </div>
       </Form.Item>
 
 
