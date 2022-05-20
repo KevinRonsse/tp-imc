@@ -12,7 +12,7 @@ const Inscription = () => {
   const onFinishFailed = (errorInfo ) => {
     console.log('Failed:', errorInfo);
   };
-  const dateFormat = 'DD-MM-YYYY';
+  const dateFormatList = ['DD/MM/YYYY', 'DD/MM/YY'];
 
   
 
@@ -29,9 +29,9 @@ const Inscription = () => {
     >
 
       <Row justify="left">
-        <Col span={4}></Col>
-        <h1>Inscription</h1>
-        <Col span={4}></Col>
+        <Col span={6}></Col>
+        <h1>Registration</h1>
+        <Col span={6}></Col>
       </Row>
 
 
@@ -64,7 +64,7 @@ const Inscription = () => {
         name="Date of birthday"
         rules={[{ required: true, message: 'Please input your date of birthday!' }]}
       >
-        <DatePicker initialValues={moment('15/06/2015', dateFormat)} />
+        <DatePicker defaultValue={moment('01/01/2015', dateFormatList[0])} format={dateFormatList} />
       </Form.Item>
 
       <Form.Item
@@ -82,7 +82,7 @@ const Inscription = () => {
       >
         <Input />
       </Form.Item>
-      <Form.Item wrapperCol={{ offset: 4, span: 8 }}>
+      <Form.Item wrapperCol={{ offset: 9, span: 8 }}>
 
        
       
@@ -91,7 +91,8 @@ const Inscription = () => {
       <Space align="center">
         
         <Button type="primary">Validation</Button>
-        <span className="mock-block">Si vous possedez deja un compte.</span>
+        <span className="mock-block">If you already have an account</span>
+       <span className="mock-block"><nav>Connection</nav></span>
       </Space>
     </div>
     </div>

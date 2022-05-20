@@ -22,7 +22,7 @@ const ImcModal = () => {
         Open Modal
       </Button>
       <Modal title="Message" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
-        <p>Identification reussie</p>
+        <p>identification successful </p>
       </Modal>
     </>
   );
