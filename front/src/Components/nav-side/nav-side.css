@@ -1,0 +1,27 @@
+.logo {
+    margin: 1rem;
+    min-height: 2rem;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.logo h1 {
+    font-size: 1rem;
+    ;
+    font-weight: bold;
+    text-align: center;
+    padding: 8px 0;
+    color: white;
+}
+
+.avatar-user {
+    margin-top: 48px;
+    margin-bottom: 24px;
+    text-align: center;
+
+}
+
+.avatar-user p {
+    margin-top: 8px;
+    color: #fde3cf;
+    font-weight: bold;
+}
