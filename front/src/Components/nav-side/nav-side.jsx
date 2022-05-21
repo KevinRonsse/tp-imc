@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Avatar, Divider, Layout, Menu } from 'antd';
+import { Avatar, Layout, Menu } from 'antd';
 import './nav-side.css';
 import {
     LogoutOutlined,
@@ -8,8 +8,8 @@ import {
     BarChartOutlined,
     LineChartOutlined,
     PlusSquareOutlined,
-    LinkOutlined
 } from '@ant-design/icons';
+import { Link } from 'react-router-dom';
 
 const { Sider } = Layout;
 
@@ -18,28 +18,21 @@ export function NavSide() {
 
     function getItem(label, key, icon, children) {
         return {
+            label,
             key,
             icon,
-            children,
-            label,
+            children
         };
     }
 
     const items = [
         getItem('Charts', 'sub1', <AreaChartOutlined />, [
-            getItem('Week', '1', <BarChartOutlined />),
-            getItem('Month', '2', <LineChartOutlined />),
-            getItem('Trimester', '3', <PieChartOutlined />),
+            getItem(<Link to="/week">Week</Link>, '1', <BarChartOutlined />),
+            getItem(<Link to="/month">Month</Link>, '2', <LineChartOutlined />),
+            getItem(<Link to="/trimester">Trimester</Link>, '3', <PieChartOutlined />),
         ]),
-        getItem('Enter new data', '4', <PlusSquareOutlined />),
-        getItem('Logout', '5', <LogoutOutlined />),
-        getItem(
-            <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-                link test
-            </a>,
-            'link',
-            <LinkOutlined />,
-        ),
+        getItem(<Link to="/addimc">Add data</Link>, '4', <PlusSquareOutlined />),
+        getItem('Logout', '5', <LogoutOutlined />)
     ];
 
     const onCollapse = () => {
@@ -52,10 +45,12 @@ export function NavSide() {
                 <h1>IMC React</h1>
             </div>
             <div className='avatar-user'>
-                <Avatar size='large' style={{ color: '#f56a00', backgroundColor: '#fde3cf'}}>
-                    U
-                </Avatar>
-                <p>Username</p>
+                <Link to="/">
+                    <Avatar size='large' style={{ color: '#f56a00', backgroundColor: '#fde3cf' }}>
+                        U
+                    </Avatar>
+                    <p>Username</p>
+                </Link>
             </div>
             <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} />
             {/* <Menu theme="dark" mode="inline" defaultSelectedKeys={[this.state.currentRoute]}> */}

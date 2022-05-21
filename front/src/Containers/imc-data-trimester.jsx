@@ -1,7 +1,10 @@
+import { Content } from "antd/lib/layout/layout";
+
 export function ImcDataTrimester() {
-    return ( 
-        <div>
+    return (
+        <Content style={{ margin: '0 16px' }}>            <h1>
             imc data per trimester
-        </div>
-     );
+        </h1>
+        </Content>
+    );
 }

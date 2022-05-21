@@ -1,17 +1,21 @@
-import './App.css';
-import Inscription from './Components/Inscription/Inscription.js';
-import { Home } from './Containers/home';
+import { Layout } from 'antd';
+import { BrowserRouter } from 'react-router-dom';
 import Connexion from './Components/Connexion/Connexion'
-import ImcModal from './Components/ImcModal/ImcModal'
+import { NavSide } from './Components/nav-side/nav-side';
+import { RoutesImc } from './Components/Tools/routes-imc';
+import './App.css'
 
 
 
 function App() {
   return (
-    <>
-      {/* <Inscription /> */}
-      <Home/>
-    </>
+    <BrowserRouter>
+      {/* <Connexion/> */}
+      <Layout className='layout-imc'>
+        <NavSide />
+        <RoutesImc />
+      </Layout>
+    </BrowserRouter>
   )
 }
 

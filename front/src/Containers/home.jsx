@@ -6,8 +6,6 @@ const { Content} = Layout;
 
 export function Home() {
     return (
-        <Layout style={{minHeight: '100vh'}}>
-            <NavSide/>
             <Content style={{margin: '0 16px'}}>
                 <div
                     className="site-layout-background"
@@ -15,7 +13,6 @@ export function Home() {
                    <ImcMain/>
                 </div>
             </Content>
-        </Layout>
     );
 }
 
