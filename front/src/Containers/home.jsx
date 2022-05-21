@@ -1,5 +1,4 @@
 import { Layout } from 'antd';
-import { NavSide } from '../Components/nav-side/nav-side';
 import { ImcMain } from './imc-main';
 
 const { Content} = Layout;

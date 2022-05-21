@@ -10,11 +10,15 @@ import {
     PlusSquareOutlined,
 } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const { Sider } = Layout;
 
 export function NavSide() {
     const [collapsed, setCollapsed] = useState(false)
+    const { userData } = useSelector((state) => ({
+        ...state.userReducer,
+    }));
 
     function getItem(label, key, icon, children) {
         return {
@@ -47,9 +51,9 @@ export function NavSide() {
             <div className='avatar-user'>
                 <Link to="/">
                     <Avatar size='large' style={{ color: '#f56a00', backgroundColor: '#fde3cf' }}>
-                        U
+                        {userData.firstName.charAt(0).toUpperCase()}
                     </Avatar>
-                    <p>Username</p>
+                    <p>{userData.firstName} {userData.lastName}</p>
                 </Link>
             </div>
             <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} />

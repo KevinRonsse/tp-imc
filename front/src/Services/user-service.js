@@ -1,7 +1,7 @@
-export function UserService() {
-    return ( 
-        <div>
+import axios from 'axios'
 
-        </div>
-     );
+const urlLogin = "http://127.0.0.1:5000/login/"
+
+export const userLogin = async () => {
+    return await axios.post(urlLogin);
 }
