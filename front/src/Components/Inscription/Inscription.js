@@ -1,20 +1,20 @@
-import { Form, Input, Button, DatePicker, Row, Col,Space } from 'antd';
+import { Form, Input, Button, DatePicker, Row, Col, Space } from 'antd';
 import moment from 'moment';
 
-
-
-
-const Inscription = () => {
+const Inscription = (props) => {
   const onFinish = (values) => {
     console.log('Success:', values);
   };
 
-  const onFinishFailed = (errorInfo ) => {
+  const onFinishFailed = (errorInfo) => {
     console.log('Failed:', errorInfo);
   };
   const dateFormatList = ['DD/MM/YYYY', 'DD/MM/YY'];
 
-  
+  const handleClick = () => {
+    props.parentCallBack(false)
+  }
+
 
   return (
 
@@ -64,7 +64,7 @@ const Inscription = () => {
         name="Date of birthday"
         rules={[{ required: true, message: 'Please input your date of birthday!' }]}
       >
-        <DatePicker defaultValue={moment('01/01/2015', dateFormatList[0])} format={dateFormatList} />
+        <DatePicker initialValues={moment('01/01/2015', dateFormatList[0])} format={dateFormatList} />
       </Form.Item>
 
       <Form.Item
@@ -84,22 +84,20 @@ const Inscription = () => {
       </Form.Item>
       <Form.Item wrapperCol={{ offset: 9, span: 8 }}>
 
-       
-      
-      <div className="space-align-container">
-    <div className="space-align-block">
-      <Space align="center">
-        
-        <Button type="primary">Validation</Button>
-        <span className="mock-block">If you already have an account</span>
-       <span className="mock-block"><nav>Connection</nav></span>
-      </Space>
-    </div>
-    </div>
+
+
+        <div className="space-align-container">
+          <div className="space-align-block">
+            <Space align="center">
+              <Button type="primary">Validation</Button>
+            </Space>
+          </div>
+        </div>
+        <span className="mock-block">
+          If you already have an account.
+          <Button type="link" onClick={handleClick}> Connexion</Button>
+        </span>
       </Form.Item>
-
-
-
     </Form >
 
   );

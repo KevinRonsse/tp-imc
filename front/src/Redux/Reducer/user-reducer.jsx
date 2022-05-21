@@ -19,7 +19,7 @@ export default function userReducer(state = INITIAL_STATE, action) {
             return {
                 ...state,
                 userData: action.payload,
-                loaded: true,
+                loggedIn: true,
             };
         }
 
@@ -28,6 +28,7 @@ export default function userReducer(state = INITIAL_STATE, action) {
             return {
                 ...state,
                 userData: noUser,
+                loggedIn:false
             }
         }
     }

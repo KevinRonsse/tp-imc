@@ -6,6 +6,7 @@ import { NavSide } from './Components/nav-side/nav-side';
 import { RoutesImc } from './Components/Tools/routes-imc';
 import { useDispatch, useSelector } from 'react-redux';
 import { getImcUser } from './Services/imc-service';
+import { Landing } from './Containers/landing';
 import './App.css'
 
 function App() {
@@ -19,25 +20,27 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (imcData.length === 0 && loggedIn) {
-      getImcUser(userData.id)
-        .then((res) => {
-          dispatch({
-            type: "LOADIMC",
-            payload: res.data.results,
+    if (imcData !== undefined) {
+      if (imcData.length === 0 && loggedIn) {
+        const data = getImcUser(userData.id)
+          .then((res) => {
+            console.log("get result",res.data.results);
+            dispatch({
+              type: "LOADIMC",
+              payload: res.data.results,
+            });
+          })
+          .catch((err) => {
+            console.log("App component: axios error:", err);
           });
-        })
-        .catch((err) => {
-          console.log("App component: axios error:", err);
-        });
 
-      if (!loggedIn) {
-        dispatch({
-          type: "CLEARDATA",
-        });
+        if (!loggedIn) {
+          dispatch({
+            type: "CLEARDATA",
+          });
+        }
       }
     }
-    
     // test
     // console.log("userData",userData);
     // console.log("loggedIn",loggedIn);
@@ -45,15 +48,24 @@ function App() {
     // console.log("updated",updated);
     // test
 
-  }, [loggedIn]);
+  }, []);
 
   return (
     <BrowserRouter>
       {/* <Connexion/> */}
-      <Layout className='layout-imc'>
-        <NavSide />
-        <RoutesImc />
-      </Layout>
+      {loggedIn
+        ?
+        (
+          <Layout className='layout-imc'>
+            <NavSide />
+            <RoutesImc />
+          </Layout>
+        )
+        :
+        (
+          <Landing />
+        )
+      }
     </BrowserRouter>
   )
 }

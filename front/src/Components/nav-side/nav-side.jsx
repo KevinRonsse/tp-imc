@@ -10,13 +10,13 @@ import {
     PlusSquareOutlined,
 } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 const { Sider } = Layout;
 
 export function NavSide() {
     const [collapsed, setCollapsed] = useState(false)
-    const { userData } = useSelector((state) => ({
+    const { userData, loggedIn } = useSelector((state) => ({
         ...state.userReducer,
     }));
 
@@ -28,7 +28,14 @@ export function NavSide() {
             children
         };
     }
-
+    
+    const dispatch = useDispatch();
+    const handleLogout = () =>{
+        dispatch ({
+            type: "LOGOUT",
+          });
+    }
+    
     const items = [
         getItem('Charts', 'sub1', <AreaChartOutlined />, [
             getItem(<Link to="/week">Week</Link>, '1', <BarChartOutlined />),
@@ -36,12 +43,13 @@ export function NavSide() {
             getItem(<Link to="/trimester">Trimester</Link>, '3', <PieChartOutlined />),
         ]),
         getItem(<Link to="/addimc">Add data</Link>, '4', <PlusSquareOutlined />),
-        getItem('Logout', '5', <LogoutOutlined />)
+        getItem(<span onClick={handleLogout}>Logout</span>, '5', <LogoutOutlined />)
     ];
 
     const onCollapse = () => {
         setCollapsed(!collapsed)
     };
+
 
     return (
         <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}>
