@@ -1,11 +1,15 @@
-import express from "express"
-import { BaseService } from "./services/base-service.js"
-import { UserService } from "./services/user-service.js"
-import { ImcService } from "./services/imc-service.js"
+import express from "express";
+import cors from "cors";
+import { BaseService } from "./services/base-service.js";
+import { UserService } from "./services/user-service.js";
+import { ImcService } from "./services/imc-service.js";
 
 const appImc = express();
 
 appImc.use(express.json());
+
+appImc.use(cors({origin: "*"}));
+
 
 // services creation
 const userService = new UserService();
@@ -14,7 +18,6 @@ const baseService = new BaseService();
 
 
 //EndPoints
-
 // user registration
 appImc.post('/register', (req, res) => {
     const { password, firstName, lastName, dob, height, weight } = req.body;
@@ -24,7 +27,7 @@ appImc.post('/register', (req, res) => {
         res.json(addResult);
     }
     else {
-        res.json({ message: "missing user informations" })
+        res.json({ message: "missing user informations" });
     }
 })
 
