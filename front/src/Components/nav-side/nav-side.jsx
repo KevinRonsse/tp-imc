@@ -58,7 +58,7 @@ export function NavSide() {
             </div>
             <div className='avatar-user'>
                 <Link to="/">
-                    <Avatar size='large' style={{ color: '#f56a00', backgroundColor: '#fde3cf' }}>
+                    <Avatar size='large' className='avatar-user-icon'>
                         {userData.firstName.charAt(0).toUpperCase()}
                     </Avatar>
                     <p>{userData.firstName} {userData.lastName}</p>

@@ -24,10 +24,9 @@ function App() {
       if (imcData.length === 0 && loggedIn) {
         const data = getImcUser(userData.id)
           .then((res) => {
-            console.log("get result",res.data.results);
             dispatch({
               type: "LOADIMC",
-              payload: res.data.results,
+              payload: res.data,
             });
           })
           .catch((err) => {
@@ -44,8 +43,6 @@ function App() {
     // test
     // console.log("userData",userData);
     // console.log("loggedIn",loggedIn);
-    // console.log("imcData",imcData);
-    // console.log("updated",updated);
     // test
 
   }, []);

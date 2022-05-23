@@ -1,5 +1,131 @@
-.imc-card{
-    margin-bottom: 16px!important;
-    border-radius: 4px!important;
-    box-shadow: 0px 1px 10px #080c18b8!important;
+.ant-row {
+    margin: 0 auto !important;
+}
+
+.ant-row::after {
+    content: "";
+    flex: auto;
+}
+
+
+.imc-card-list {
+    max-width: none !important;
+    /* margin: 0 auto!important; */
+}
+
+
+.imc-card {
+    margin-bottom: 16px !important;
+    border-radius: 4px !important;
+    box-shadow: 0px 1px 10px #080c18b8 !important;
+    height: 95%;
+    min-width: 240px;
+}
+
+
+.imc-card p {
+    text-align: center;
+}
+
+.currentImcTitle {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.block-table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.block-table-header {
+    font-size: larger;
+}
+
+.block-table td {
+    text-align: center;
+}
+
+.imc-block{
+    display: inline-block;
+    height: 64px;
+    width: 100%;
+    padding: 1%;
+    box-shadow: 0px 4px 7px #888888;
+}
+
+    .imc-block-blue {
+    background-color: rgb(5 138 215);
+    color: white;
+}
+
+.imc-block-green {
+    background: rgb(34 153 74);
+    color: white;
+}
+
+.imc-block-yellow {
+    background: rgb(255, 208, 0);
+    color: black;
+}
+
+.imc-block-red {
+    background: rgb(219, 16, 16);
+    color: white;
+}
+
+.imc-block-black {
+    background: black;
+    color: white;
+}
+
+
+.imc-blue {
+    display: inline-block;
+    margin-right: 2%;
+    margin-left: 2%;
+    font-weight: bold;
+    background-color: rgb(5 138 215);
+    height: 4px;
+    width: 16%;
+}
+
+.imc-green {
+    display: inline-block;
+    margin-right: 2%;
+    margin-left: 2%;
+    font-weight: bold;
+    background: rgb(34 153 74);
+    height: 4px;
+    width: 16%;
+}
+
+.imc-yellow {
+    display: inline-block;
+    margin-right: 2%;
+    margin-left: 2%;
+    font-weight: bold;
+    background: rgb(255, 208, 0);
+    height: 4px;
+    width: 16%;
+}
+
+.imc-red {
+    display: inline-block;
+    margin-right: 2%;
+    margin-left: 2%;
+    font-weight: bold;
+    background: rgb(219, 16, 16);
+    height: 4px;
+    width: 16%;
+}
+
+.imc-black {
+    display: inline-block;
+    margin-right: 2%;
+    margin-left: 2%;
+    font-weight: bold;
+    background: black;
+    height: 4px;
+    width: 16%;
 }

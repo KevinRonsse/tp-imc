@@ -6,7 +6,6 @@ import { imcStore } from './Redux/Store/imc-store';
 import './index.css';
 import 'antd/dist/antd.css';
 
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={imcStore}>
