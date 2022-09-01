@@ -14,6 +14,7 @@
     "axios": "^0.27.2",
     "cors": "^2.8.5",
     "less": "^4.1.2",
+    "leva": "^0.9.27",
     "lodash": "^4.17.21",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
@@ -21,6 +22,7 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "redux": "^4.2.0",
+    "use-gauge": "^0.5.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

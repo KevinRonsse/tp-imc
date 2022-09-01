@@ -11,7 +11,7 @@ export function ImcDataWeek() {
             <Row>
                 <Col span={6}>
                     <Card className="gauge-card">
-                        <DemoGauge />
+                        <DemoGauge value={100} />
                     </Card>
                 </Col>
             </Row>
